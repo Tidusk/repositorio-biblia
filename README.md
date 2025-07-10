@@ -103,8 +103,28 @@ lib
 ### 📱 Imagens do App (Screenshots)
 
 <p align="center">
-  <img src="Img/login.png" width="200" alt="Tela de Login">
-  <img src="Img/home.png" width="200" alt="Tela Principal">
-  <img src="Img/study.png" width="200" alt="Tela de Estudo">
-  <img src="Img/saved.png" width="200" alt="Tela de Estudos Salvos">
+  <figure>
+    <img src="Img/login.png" width="200" alt="Tela de Login">
+    <figcaption>Tela de Login: Acesso seguro à aplicação.</figcaption>
+  </figure>
+  <figure>
+    <img src="Img/home.png" width="200" alt="Tela Principal">
+    <figcaption>Tela Principal: Visão geral e navegação.</figcaption>
+  </figure>
+  <figure>
+    <img src="Img/chapters.png" width="200" alt="Tela de Capítulos">
+    <figcaption>Tela de Capítulos: Selecione o capítulo desejado.</figcaption>
+  </figure>
+  <figure>
+    <img src="Img/verses.png" width="200" alt="Tela de Versículos">
+    <figcaption>Tela de Versículos: Explore os versículos de um capítulo.</figcaption>
+  </figure>
+  <figure>
+    <img src="Img/study.png" width="200" alt="Tela de Estudo">
+    <figcaption>Tela de Estudo: Estudo aprofundado gerado por IA.</figcaption>
+  </figure>
+  <figure>
+    <img src="Img/saved.png" width="200" alt="Tela de Estudos Salvos">
+    <figcaption>Tela de Estudos Salvos: Sua biblioteca pessoal de estudos.</figcaption>
+  </figure>
 </p>
