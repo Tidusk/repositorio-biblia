@@ -7,6 +7,9 @@ class AuthService {
   // Stream para ouvir as mudanças de estado de autenticação
   Stream<User?> get user => _auth.authStateChanges();
 
+  // Getter for the current user
+  User? get currentUser => _auth.currentUser;
+
   // Método para criar conta com e-mail e senha
   Future<User?> createAccount({
     required String email,
@@ -37,8 +40,7 @@ class AuthService {
       );
       return result.user;
     } on FirebaseAuthException catch (e) {
-      // Usando debugPrint em vez de print
-      debugPrint('Erro ao fazer login: ${e.message}');
+      debugPrint('Erro no login: ${e.message}');
       return null;
     }
   }

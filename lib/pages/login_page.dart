@@ -53,7 +53,6 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    print("Current Page: LoginPage");
     return Scaffold(
       appBar: AppBar(
         title: const Text('Bíblia Estudo IA'),

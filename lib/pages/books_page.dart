@@ -24,7 +24,6 @@ class _BooksPageState extends State<BooksPage> {
 
   @override
   Widget build(BuildContext context) {
-    print("Current Page: BooksPage");
     return FutureBuilder<List<Book>>(
       future: _booksFuture,
       builder: (context, snapshot) {

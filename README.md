@@ -1,83 +1,99 @@
-# Bíblia Estudo IA
+# 📖 Bíblia Estudo IA
 
-Este é um aplicativo em Flutter que permite ao usuário navegar pela Bíblia, selecionar um versículo e receber um estudo aprofundado gerado pela API da OpenAI. Os estudos podem ser salvos e consultados posteriormente.
+Este aplicativo, desenvolvido em Flutter, é uma ferramenta moderna para o estudo das Escrituras. Ele permite que os usuários naveguem pela Bíblia, selecionem versículos específicos e, com o poder da inteligência artificial, recebam estudos aprofundados e contextualizados.
 
-## Funcionalidades
+O objetivo é transformar a leitura bíblica em uma experiência mais interativa e enriquecedora. Utilizando o Firebase para autenticação e armazenamento de dados, e a API da OpenAI para a geração de conteúdo, o app oferece uma plataforma robusta e segura para que os usuários possam salvar seus estudos e acessá-los a qualquer momento.
 
--   **Autenticação**: Login e criação de conta com E-mail e Senha (Firebase Auth).
--   **Navegação Bíblica**: Explore livros, capítulos e versículos da Bíblia (via API Bible4U).
--   **Estudo com IA**: Toque em um versículo para gerar um estudo com Contexto Histórico, Aplicação Prática e Referências Cruzadas (via OpenAI API).
--   **Biblioteca Pessoal**: Salve seus estudos favoritos no Cloud Firestore e acesse-os a qualquer momento.
--   **WebView**: Abra links de referência encontrados nos estudos diretamente no aplicativo.
+---
 
-## Checklist de Requisitos
+### 🔧 Tecnologias Utilizadas
 
--   [x] **RF1. Autenticação**: Firebase Auth
--   [x] **RF2. Navegação b´ıblica**: Bible4U API
--   [x] **RF3. Geração de Estudo Avançado**: OpenAI API
--   [x] **RF4. Biblioteca de Estudos**: CRUD no Firestore
--   [x] **RF5. Proteção de Dados**: Regras de segurança do Firestore
--   [x] **RNF1. Interface simples, responsiva**
--   [x] **RNF2. Exibir snackbar para feedback**
--   [x] **RNF3. Chave da OpenAI em arquivo `.env`**
--   [x] **RNF4. C´odigo dividido em `models`, `services`, `pages`**
---   [x] **RNF5. Uso de `webview_flutter`**
--   [x] **RNF6. Compat´ıvel com Android API ≥ 21**
+- **Framework:** Flutter
+- **Autenticação e Backend:** Firebase (Authentication, Cloud Firestore)
+- **Geração de Estudo:** OpenAI API
+- **Conteúdo Bíblico:** Bible4U API
+- **Gerenciamento de Estado:** Flutter Riverpod
+- **Variáveis de Ambiente:** flutter_dotenv
 
-## Como Configurar e Rodar o Projeto
+---
 
-### 1. Pré-requisitos
+### 🚀 Funcionalidades
 
--   Flutter SDK instalado.
--   Conta no [Firebase](https://firebase.google.com/).
--   Conta na [OpenAI](https://openai.com/) para obter uma chave de API.
+-   🚪 **Autenticação Segura:** Crie sua conta e faça login com e-mail e senha.
+-   📚 **Navegação Intuitiva:** Explore facilmente os livros, capítulos e versículos da Bíblia.
+-   🤖 **Estudos com IA:** Receba uma análise detalhada de qualquer versículo, incluindo contexto histórico, aplicação prática e referências cruzadas.
+-   💾 **Biblioteca Pessoal:** Salve os estudos que mais gostar para consultar depois.
+-   🌓 **Tema Dinâmico:** Alterne entre os modos claro e escuro para uma leitura mais confortável.
+-   🔗 **WebView Integrado:** Abra links de referências diretamente no app, sem interrupções.
 
-### 2. Configuração do Firebase
+---
 
-1.  Crie um projeto no console do Firebase.
-2.  Configure o `flutterfire` seguindo a [documentação oficial](https://firebase.flutter.dev/docs/cli).
-3.  No diretório do projeto, rode o comando abaixo e siga as instruções para conectar seu app ao projeto Firebase:
-    ```bash
-    flutterfire configure
-    ```
-4.  No console do Firebase, ative os seguintes serviços:
-    -   **Authentication**: Ative o provedor "E-mail/senha".
-    -   **Cloud Firestore**: Crie um banco de dados.
+### ⚙️ Configuração do Projeto
 
-### 3. Variáveis de Ambiente
+Siga os passos abaixo para configurar e rodar o projeto localmente.
 
-1.  No diretório raiz do projeto, crie um arquivo chamado `.env`.
-2.  Adicione sua chave da OpenAI API a este arquivo:
-    ```
-    OPENAI_API_KEY=sk-sua-chave-aqui
-    ```
-    O arquivo `.env` já está no `.gitignore` para não ser enviado ao seu repositório.
-
-### 4. Regras de Segurança do Firestore
-
-Vá até a aba **Regras** do Cloud Firestore no seu console do Firebase e cole as seguintes regras para proteger os dados dos usuários:
-```
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    match /users/{userId}/{document=**} {
-      allow read, write: if request.auth != null && request.auth.uid == userId;
-    }
-  }
-}
+**1. Clone o Repositório**
+```bash
+git clone https://github.com/Tidusk/repositorio-biblia
+cd repositorio-biblia
 ```
 
-### 5. Rodar o Aplicativo
+**2. Instale as Dependências**
+```bash
+flutter pub get
+```
 
-1.  Instale as dependências:
-    ```bash
-    flutter pub get
-    ```
-2.  Execute o aplicativo:
-    ```bash
-    flutter run
-    ```
+**3. Configure o Firebase**
 
-## Capturas de Tela / GIF
+Siga a documentação oficial para configurar o FlutterFire CLI e conectar seu projeto Flutter a um projeto Firebase.
 
-*Adicione aqui um GIF ou algumas capturas de tela mostrando o fluxo principal do aplicativo: tela de login, navegação de livros, visualização de versículos, estudo gerado pela IA e a lista de estudos salvos.*
+```bash
+flutterfire configure
+```
+
+**4. Crie o Arquivo de Ambiente (.env)**
+
+Na raiz do projeto, crie um arquivo chamado `.env` e adicione sua chave da API da OpenAI:
+
+```
+OPENAI_API_KEY=sua_chave_secreta_aqui
+```
+**Aviso Importante:** O arquivo `.env` já está incluído no `.gitignore` para garantir que suas chaves secretas não sejam enviadas para o repositório.
+
+---
+
+### 📂 Estrutura de Diretórios
+
+A estrutura de pastas do projeto foi organizada para manter o código limpo e escalável.
+
+```
+lib
+├── main.dart             # Ponto de entrada da aplicação e configuração do Riverpod
+|
+├── models                # Contém os modelos de dados (ex: Book, Verse)
+│   ├── book_model.dart
+│   └── verse_model.dart
+|
+├── pages                 # Contém as telas (Widgets) da aplicação
+│   ├── home_page.dart
+│   ├── login_page.dart
+│   ├── study_page.dart
+│   └── ...
+|
+└── services              # Contém a lógica de negócio e comunicação com APIs
+    ├── auth_service.dart     # Gerencia a autenticação com Firebase
+    ├── bible_service.dart    # Comunica com a API da Bíblia
+    ├── firestore_service.dart # Gerencia o CRUD no Firestore
+    └── openai_service.dart   # Comunica com a API da OpenAI
+```
+
+---
+
+### 📱 Imagens do App (Screenshots)
+
+<p align="center">
+  <img src="Img/login.png" width="200" alt="Tela de Login">
+  <img src="Img/home.png" width="200" alt="Tela Principal">
+  <img src="Img/study.png" width="200" alt="Tela de Estudo">
+  <img src="Img/saved.png" width="200" alt="Tela de Estudos Salvos">
+</p>

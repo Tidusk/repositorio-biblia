@@ -16,7 +16,6 @@ class _SavedStudiesPageState extends State<SavedStudiesPage> {
 
   @override
   Widget build(BuildContext context) {
-    print("Current Page: SavedStudiesPage");
     return Scaffold(
       body: StreamBuilder<QuerySnapshot>(
         stream: _firestoreService.getStudies(),

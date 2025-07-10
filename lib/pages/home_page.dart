@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:myapp/pages/saved_studies_page.dart';
+import 'package:myapp/main.dart'; // Import main.dart to access themeProvider
 import '../services/auth_service.dart';
 import 'books_page.dart';
 
-class HomePage extends StatefulWidget {
-  final VoidCallback toggleTheme;
-  final ThemeMode currentThemeMode;
-
-  const HomePage({super.key, required this.toggleTheme, required this.currentThemeMode});
+// 1. Convert to ConsumerStatefulWidget
+class HomePage extends ConsumerStatefulWidget {
+  const HomePage({super.key});
 
   @override
+  // 2. Update the State class to be a ConsumerState
   HomePageState createState() => HomePageState();
 }
 
-class HomePageState extends State<HomePage> {
+class HomePageState extends ConsumerState<HomePage> {
   final AuthService _authService = AuthService();
   int _selectedIndex = 0;
   final String _bibleRef = 'AA';
@@ -39,7 +40,9 @@ class HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    print("Current Page: HomePage");
+    // 3. Watch the themeProvider
+    final themeMode = ref.watch(themeProvider);
+
     return Scaffold(
       appBar: AppBar(
         title: Column(
@@ -55,14 +58,17 @@ class HomePageState extends State<HomePage> {
         ),
         actions: [
           IconButton(
-            icon: Icon(widget.currentThemeMode == ThemeMode.light ? Icons.dark_mode : Icons.light_mode),
-            onPressed: widget.toggleTheme,
+            // 4. Update the icon based on the themeMode from the provider
+            icon: Icon(themeMode == ThemeMode.light ? Icons.dark_mode : Icons.light_mode),
+            // 5. Call the toggleTheme method from the provider
+            onPressed: () => ref.read(themeProvider.notifier).toggleTheme(),
             tooltip: 'Alternar Tema',
           ),
           IconButton(
             icon: const Icon(Icons.logout),
             onPressed: () {
               _authService.signOut();
+              // 6. No need to navigate, StreamBuilder in main.dart will handle it
             },
             tooltip: 'Sair',
           ),

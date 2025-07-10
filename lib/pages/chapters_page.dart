@@ -10,7 +10,6 @@ class ChaptersPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("Current Page: ChaptersPage");
     return Scaffold(
       appBar: AppBar(
         title: Text(book.name),

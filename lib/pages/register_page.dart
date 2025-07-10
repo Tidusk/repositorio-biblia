@@ -38,10 +38,7 @@ class _RegisterPageState extends State<RegisterPage> {
           );
           Navigator.of(context).pushReplacement(
             MaterialPageRoute(
-              builder: (context) => HomePage(
-                toggleTheme: () {},
-                currentThemeMode: ThemeMode.system,
-              ),
+              builder: (context) => const HomePage(),
             ),
           );
         } else {
