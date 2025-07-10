@@ -103,10 +103,8 @@ lib
 ### 📱 Imagens do App (Screenshots)
 
 <p align="center">
-  <img src="![alt text](image.png)" width="200" alt="Tela de Login">
-  <img src="![alt text](image-1.png)" width="200" alt="Tela Principal">
-  <img src="![alt text](image-2.png)" width="200" alt="Tela de Capitulos">
-  <img src="![alt text](image-4.png)" width="200" alt="Tela de Versículos">
-  <img src="![alt text](image-5.png)" width="200" alt="Tela de Estudo">
-  <img src="![alt text](image-3.png)" width="200" alt="Tela de Estudos Salvos">
+  <img src="Img/login.png" width="200" alt="Tela de Login">
+  <img src="Img/home.png" width="200" alt="Tela Principal">
+  <img src="Img/study.png" width="200" alt="Tela de Estudo">
+  <img src="Img/saved.png" width="200" alt="Tela de Estudos Salvos">
 </p>
