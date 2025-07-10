@@ -21,7 +21,7 @@ O objetivo é transformar a leitura bíblica em uma experiência mais interativa
 
 -   🚪 **Autenticação Segura:** Crie sua conta e faça login com e-mail e senha.
 -   📚 **Navegação Intuitiva:** Explore facilmente os livros, capítulos e versículos da Bíblia.
--   🤖 **Estudos com IA:** Receba uma análise detalhada de qualquer versículo, incluindo contexto histórico, aplicação prática e referências cruzadas.
+-   🤖 **Estudos com IA Aprimorados:** Receba uma análise detalhada de qualquer versículo, agora com estrutura garantida de Contexto Histórico, Aplicação Prática e Referências Cruzadas, e limitado a 500 tokens para concisão.
 -   💾 **Biblioteca Pessoal:** Salve os estudos que mais gostar para consultar depois.
 -   🌓 **Tema Dinâmico:** Alterne entre os modos claro e escuro para uma leitura mais confortável.
 -   🔗 **WebView Integrado:** Abra links de referências diretamente no app, sem interrupções.
@@ -59,6 +59,17 @@ Na raiz do projeto, crie um arquivo chamado `.env` e adicione sua chave da API d
 OPENAI_API_KEY=sua_chave_secreta_aqui
 ```
 **Aviso Importante:** O arquivo `.env` já está incluído no `.gitignore` para garantir que suas chaves secretas não sejam enviadas para o repositório.
+
+---
+
+### 🔒 Segurança e Regras do Firestore
+
+As regras de segurança do Firestore foram configuradas para garantir que cada usuário tenha acesso exclusivo aos seus próprios estudos salvos. Isso significa que:
+
+-   **Leitura e Escrita Restritas:** Um usuário só pode ler, criar, atualizar ou excluir documentos (estudos) que pertencem à sua própria conta (ID de usuário autenticado).
+-   **Proteção de Dados:** Impede o acesso não autorizado a dados de outros usuários, mantendo a privacidade e a integridade da sua biblioteca de estudos.
+
+As regras estão definidas no arquivo `firestore.rules` na raiz do projeto.
 
 ---
 
