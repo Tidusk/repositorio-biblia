@@ -1,0 +1,124 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+
+# Flutter/Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+/build/
+/ios/Pods/
+/ios/Flutter/App.framework
+/ios/Flutter/engine.xcconfig
+/ios/Flutter/flutter_export_environment.sh
+/ios/Flutter/.last_build_id
+/ios/Flutter/Generated.xcconfig
+/ios/Runner/GeneratedPluginRegistrant.*
+/ios/Runner/Info.plist
+/ios/Runner/Runner.xcscheme
+/ios/Runner.xcodeproj/project.xcworkspace/
+/ios/Runner.xcworkspace/
+app.flx
+snapshot.d
+snapshot.h
+snapshot.S
+snapshot.cc
+snapshot.o
+vm_snapshot_data
+vm_snapshot_instr
+kernel_blob.bin
+platform.dill
+
+# Environment variables
+.env
+secrets.json
+.secret
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# Android
+/android/app/src/main/assets/flutter_assets/
+/android/app/src/main/jniLibs/
+/android/app/src/main/res/
+/android/app/build/
+/android/build/
+/android/gradle/
+/android/gradlew
+/android/gradlew.bat
+/android/local.properties
+/android/.gradle/
+/android/key.properties
+
+# iOS
+/ios/Assets.xcassets/
+/ios/Classes/
+/ios/Flutter/
+/ios/Pods/
+/ios/Runner/
+/ios/ServiceDefinitions.json
+/ios/Podfile
+/ios/Podfile.lock
+/ios/build/
+/ios/project.xcworkspace/
+/ios/xcshareddata/
+/ios/.symlinks/
+/ios/Runner.xcworkspace/contents.xcworkspacedata
+
+# Web
+/web/
+!/web/index.html
+!/web/favicon.png
+!/web/icons/
+!/web/manifest.json
+
+# Windows
+/windows/
+!/windows/runner/
+!/windows/flutter/
+!/windows/CMakeLists.txt
+
+# Linux
+/linux/
+!/linux/runner/
+!/linux/flutter/
+!/linux/my_application.cc
+!/linux/CMakeLists.txt
+
+# macOS
+/macos/
+!/macos/runner/
+!/macos/flutter/
+!/macos/CMakeLists.txt
+
+# Arquivos de build
+build/
+.dart_tool/
+.packages
+pubspec.lock
+*.apk
+*.aab
+
+# Arquivos temporários e caches
+*.dill
+*.so
+*.jar
+*.dex
+
+# IDEs
+.idea/
+.vscode/
