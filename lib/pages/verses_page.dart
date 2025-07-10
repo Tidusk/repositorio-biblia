@@ -42,10 +42,10 @@ class _VersesPageState extends State<VersesPage> {
 
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text('Gerando estudo para ${widget.book.name} ${widget.chapter}:${verse.number}...')),
-    );
+    ); // Corrigido: Removido parênteses e ponto e vírgula extras
 
     try {
-      final studyText = await _openAIService.getStudy(fullVerseText);
+      final studyText = await _openAIService.generateStudy(fullVerseText);
       
       if (!mounted) return;
 
@@ -70,7 +70,6 @@ class _VersesPageState extends State<VersesPage> {
 
   @override
   Widget build(BuildContext context) {
-    print("Current Page: VersesPage");
     return Scaffold(
       appBar: AppBar(
         title: Text('${widget.book.name} ${widget.chapter}'),

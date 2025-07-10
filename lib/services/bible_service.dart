@@ -4,7 +4,8 @@ import '../models/book_model.dart';
 import '../models/verse_model.dart';
 
 class BibleService {
-  final String _base = 'https://cors-anywhere.herokuapp.com/https://bible4u.net/api/v1';
+  // Removido o proxy cors-anywhere.herokuapp.com
+  final String _base = 'https://bible4u.net/api/v1';
   final String bibleRef; // como "NTLH", "KJV", "NVI-PT", etc
 
   BibleService(this.bibleRef);
